@@ -528,6 +528,7 @@ if __name__ == '__main__':
         if opt.global_rank in [-1, 0]:
             logger.info(f'Start Tensorboard with "tensorboard --logdir {opt.project}", view at http://localhost:6006/')
             tb_writer = SummaryWriter(opt.save_dir)  # Tensorboard
+        wandb = None
         train(hyp, opt, device, tb_writer, wandb)
 
     # Evolve hyperparameters (optional)
